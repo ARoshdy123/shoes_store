@@ -16,7 +16,7 @@ class ShoeItem extends StatelessWidget {
         children: [
           Expanded(
             child: Image.asset(
-              shoe.imagePath, // Make sure your Shoe model includes imageUrl
+              shoe.imagePath,
               fit: BoxFit.cover,
               width: double.infinity,
             ),

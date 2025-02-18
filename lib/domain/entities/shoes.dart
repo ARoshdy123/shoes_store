@@ -1,4 +1,6 @@
+// shoes entites
 class Shoe {
+
   final int id;
   final String name;
   final String brand;

@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shoes_store/presentation/page/shoes_page.dart';
 import 'injection_container.dart' as di;
 
-/// Entry point of the app
+/// the main of the app
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Initialize dependency injection
   await di.init();
   runApp(const ShoesStoreApp());
 }

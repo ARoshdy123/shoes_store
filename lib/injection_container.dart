@@ -12,7 +12,7 @@ final sl = GetIt.instance;
 /// Initializes all the dependencies
 Future<void> init() async {
   // Register Data Source
-  sl.registerLazySingleton<ShoeDataSource>(() => ShoeDataSourceImpl());
+  sl.registerLazySingleton<ShoeDataSource>(() => ShoeDataModelImpl());
 
   // Register Repository and inject the data source
   sl.registerLazySingleton<ShoeRepository>(() => ShoeRepositoryImpl(dataSource: sl()));

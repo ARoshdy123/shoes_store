@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoes_store/controller/cubit/shoes_cubit.dart';
@@ -16,7 +15,7 @@ class ShoesPage extends StatelessWidget {
       create: (_) => sl<ShoesCubit>()..getShoes(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Shoes Store"),
+          title: Center(child: const Text("Shoes Store")),
         ),
         body: BlocBuilder<ShoesCubit, ShoesState>(
           builder: (context, state) {
@@ -29,7 +28,6 @@ class ShoesPage extends StatelessWidget {
                   crossAxisCount: 2,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
-                  // Adjust the childAspectRatio as needed for your design
                   childAspectRatio: 0.75,
                 ),
                 itemCount: state.shoes.length,

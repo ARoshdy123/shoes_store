@@ -1,20 +1,17 @@
 import 'package:shoes_store/domain/entities/shoes.dart';
-/// Class for the shoes data source
-import 'package:shoes_store/domain/entities/shoes.dart';
 
 /// Class for the shoes data source
 abstract class ShoeDataSource {
   Future<List<Shoe>> getShoes();
 }
-
-/// A simple implementation that returns dummy data with image URLs
-class ShoeDataSourceImpl implements ShoeDataSource {
+// implementation for
+class ShoeDataModelImpl implements ShoeDataSource {
   @override
   Future<List<Shoe>> getShoes() async {
-    // Delay to simulate network call
+    // Delay to await the data
     await Future.delayed(Duration(seconds: 2));
 
-    // Return a list of dummy shoes with image URLs
+    // list of shoes model
     return [
       Shoe(
         id: 1,

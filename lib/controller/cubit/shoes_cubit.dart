@@ -9,7 +9,7 @@ class ShoesCubit extends Cubit<ShoesState> {
   ShoesCubit({required this.getShoesList}) : super(ShoesInitial());
   final GetShoesList getShoesList;
 
-  /// Fetches the list of shoes and updates the state accordingly
+  /// Get the list of shoes and updates the state
   Future<void> getShoes() async {
     try {
       emit(ShoesLoading());

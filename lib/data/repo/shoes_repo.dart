@@ -11,7 +11,7 @@ class ShoeRepositoryImpl implements ShoeRepository {
 
   @override
   Future<List<Shoe>> getShoes() async {
-    // Fetch shoes using the data source
+    // get shoes using the data source
     return await dataSource.getShoes();
   }
 }
