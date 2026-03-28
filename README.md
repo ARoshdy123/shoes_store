@@ -1,4 +1,4 @@
-# Athir
+ Athir
 
 Athir is a Flutter application for discovering doctors, booking appointments, managing profile information, and viewing medical records.
 
