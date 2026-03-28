@@ -1,9 +1,9 @@
-# Doctor
+# Athir
 
-Flutter application for discovering doctors, booking appointments, managing profile data, and viewing medical-record PDFs. The codebase also contains Athir-branded assets and copy, so final product branding should be confirmed before public release.
+Athir is a Flutter application for discovering doctors, booking appointments, managing profile information, and viewing medical records.
 
 <p align="center">
-  <img src="assets/svgs/athir_logo.svg" width="180" alt="App logo" />
+  <img src="assets/svgs/athir_logo.svg" width="180" alt="Athir logo" />
 </p>
 
 <p align="center">
@@ -17,7 +17,7 @@ Flutter application for discovering doctors, booking appointments, managing prof
 
 - Onboarding flow that leads users into authentication.
 - Email/password login and sign-up with form validation.
-- Optional "Remember me" support backed by local storage.
+- Remember-me support backed by local storage.
 - Biometric login using `local_auth` after credentials have been saved.
 - Home dashboard with doctor specializations, doctor recommendations, and promotional banners.
 - Doctor exploration with debounced search and specialization-based filtering.
@@ -31,17 +31,17 @@ Flutter application for discovering doctors, booking appointments, managing prof
 
 ## Screenshots
 
-Repository screenshots were not clearly provided.
+Add project screenshots here when they are available.
 
-| Screen | Status |
+| Screen | Preview |
 | --- | --- |
-| Onboarding | TODO: add screenshot |
-| Login / Sign Up | TODO: add screenshot |
-| Home | TODO: add screenshot |
-| Explore / Doctor Details | TODO: add screenshot |
-| Booking Flow | TODO: add screenshot |
-| My Appointments | TODO: add screenshot |
-| Profile / Medical Records | TODO: add screenshot |
+| Onboarding | TODO |
+| Login / Sign Up | TODO |
+| Home | TODO |
+| Explore / Doctor Details | TODO |
+| Booking Flow | TODO |
+| My Appointments | TODO |
+| Profile / Medical Records | TODO |
 
 ## Platform Support
 
@@ -52,7 +52,7 @@ Repository screenshots were not clearly provided.
 | macOS | Runner exists in the repository. |
 | Windows | Runner exists in the repository. |
 | Linux | Runner exists in the repository. |
-| Web | Web scaffolding exists, but the app is not currently web-ready because app code imports `dart:io` in multiple runtime paths. |
+| Web | Web scaffolding exists, but app code currently imports `dart:io` in runtime features, so it is not web-ready yet. |
 
 ## Tech Stack
 
@@ -63,7 +63,7 @@ Repository screenshots were not clearly provided.
 | State management | `flutter_bloc` with Cubits |
 | Dependency injection | `get_it` |
 | Networking | `dio`, `retrofit`, `pretty_dio_logger` |
-| Models / codegen | `json_serializable`, `json_annotation`, `freezed`, `build_runner` |
+| Models / code generation | `json_serializable`, `json_annotation`, `freezed`, `build_runner` |
 | Local storage | `shared_preferences`, `flutter_secure_storage` |
 | Biometrics | `local_auth` |
 | UI / responsiveness | `flutter_screenutil`, `flutter_svg`, `shimmer`, `google_nav_bar`, `easy_date_timeline` |
@@ -92,7 +92,7 @@ lib/
     routing/             # route names and route generation
     services/            # download service
     theming/             # colors, text styles, font helpers
-    widgets/             # shared form/button widgets
+    widgets/             # shared UI components
   features/
     onboarding/
     login/
@@ -137,7 +137,7 @@ features/<feature>/
 
 ## Backend Integration
 
-The app talks to a REST backend through Dio + Retrofit. The base URL is hardcoded in `lib/core/networking/api_constants.dart`:
+The app communicates with a REST backend through Dio + Retrofit. The base URL is hardcoded in `lib/core/networking/api_constants.dart`:
 
 ```text
 https://vcare.integration25.com/api/
@@ -159,7 +159,7 @@ Implemented API calls found in the repository:
 | `appointment/store` | `POST` | Create appointment |
 | `appointment/index` | `GET` | Fetch appointments |
 
-Not everything is backend-driven yet:
+Not all content is backend-driven yet:
 
 - Home banner offers use local mock data.
 - Offer details are currently local/mock and include a TODO for booking API integration.
@@ -170,7 +170,7 @@ Not everything is backend-driven yet:
 - Onboarding navigates to the login screen.
 - Users can log in or create an account.
 - On successful login, the bearer token is stored in secure storage and injected into Dio headers.
-- "Remember me" stores the email in shared preferences and the password in secure storage.
+- Remember-me stores the email in shared preferences and the password in secure storage.
 - Fingerprint / biometric login reuses saved credentials and then performs the standard login request.
 - Logout calls the backend logout endpoint and clears the stored token.
 
@@ -222,7 +222,7 @@ If you update splash assets or splash settings, regenerate the native splash:
 dart run flutter_native_splash:create
 ```
 
-### Run
+## Run
 
 Android flavors are configured in `android/app/build.gradle.kts`.
 
@@ -269,7 +269,7 @@ flutter build appbundle --flavor production -t lib/main_production.dart
 flutter build ios -t lib/main_production.dart
 ```
 
-### Desktop runners present in the repo
+### Desktop runners present in the repository
 
 ```bash
 flutter build macos -t lib/main_production.dart
@@ -285,7 +285,7 @@ No web build command is documented here because the current app code imports `da
 
 No `.env`, Firebase configuration, or `--dart-define` based environment setup was found in the repository.
 
-Current configuration points worth knowing:
+Current configuration points:
 
 - API base URL is hardcoded in `lib/core/networking/api_constants.dart`.
 - Android product flavors:
@@ -303,10 +303,7 @@ No project test suite was found under a root `test/` directory.
 Useful commands:
 
 ```bash
-# Static analysis
 flutter analyze
-
-# Run tests after adding them
 flutter test
 ```
 
@@ -340,12 +337,3 @@ Current release caveats from the codebase:
 ## License
 
 No license file was found in the repository, so the project license is not yet specified.
-
-## Information Still Needed
-
-- [ ] Final product name and branding decision (`Doctor`, `Doc App`, and `Athir` all appear in the repository)
-- [ ] Official screenshots or demo assets
-- [ ] Confirmed release target platforms beyond the available Flutter runners
-- [ ] Environment strategy if separate staging/production backends are required
-- [ ] Release signing/provisioning setup for Android and iOS
-- [ ] Project license
